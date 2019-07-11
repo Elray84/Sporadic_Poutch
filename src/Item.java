@@ -4,8 +4,5 @@
  * All Rights Reserved
  */
 
-public class GameManager {
-
-
-
+public class Item {
 }
