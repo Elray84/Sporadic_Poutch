@@ -14,6 +14,7 @@ public class Connard {
     private int armor;
     private int magic_res;
     private int attack_speed;
+    private int destin;
     private Position pos;
     private ArrayList<Item> myItems;
 

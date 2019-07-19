@@ -1,0 +1,56 @@
+{
+  "single_items": {
+    "armor": {
+      "name": "Bouclier d'Yvain",
+      "buff": "armor_buff",
+      "value": 20
+    },
+    "m_attack": {
+      "name": "Dent de furet",
+      "buff": "magic_damage",
+      "value": 10
+    }
+  },
+  "double_items": {
+    "m_attack": {
+      "name": "Dent de requin",
+      "buff": "magic_damage",
+      "value": 50
+    },
+    "armor": {
+      "name": "Armure de chevalier",
+      "buff": "armor_buff",
+      "value": 80
+    }
+  },
+  "legendary_items": {
+    "airin": {
+      "name": "Bouclier d'Airain",
+      "buff1": "magic_res",
+      "buff2": "armor_buff",
+      "value1": 100,
+      "value2": 150,
+      "special_effect": "Gives the character a second life when he dies."
+    },
+    "excalibur": {
+      "name": "Excalibur, l'épée des Rois",
+      "buff1": "attack_buff",
+      "buff2": "magic_damage",
+      "value1": 100,
+      "value2": 100,
+      "special_effect": "Give a huge attack buff to characters with a great destiny..."
+    },
+    "bague_controle": {
+      "name": "Bague de Contrôle des Lames",
+      "buff": null,
+      "special_effect": "Gives the holder immunity to physical attacks."
+    },
+    "bague_loth": {
+      "name": "Bague du Roi Loth",
+      "buff": "magic_damage",
+      "value": 250,
+      "special_effect": "The holder can launch lightnings."
+    },
+    ""
+  }
+}
