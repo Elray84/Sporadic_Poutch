@@ -5,21 +5,33 @@
       "buff": "armor_buff",
       "value": 20
     },
-    "m_attack": {
+    "m_damage": {
       "name": "Dent de furet",
       "buff": "magic_damage",
       "value": 10
+    },
+    "attack": {
+      "name": "Couteau à pâté",
+      "buff": "attack_buff",
+      "value": 20
     }
   },
   "double_items": {
-    "m_attack": {
+    "m_damage": {
       "name": "Dent de requin",
       "buff": "magic_damage",
-      "value": 50
+      "value": 50,
+      "merge_with": ["m_damage", "armor", "attack", "m_res"],
+      "merge_to": ["bague_loth"]
     },
     "armor": {
       "name": "Armure de chevalier",
       "buff": "armor_buff",
+      "value": 80
+    },
+    "attack": {
+      "name": "Couteau du Roi Ban",
+      "buff": "attack_buff",
       "value": 80
     }
   },
@@ -51,6 +63,10 @@
       "value": 250,
       "special_effect": "The holder can launch lightnings."
     },
-    ""
+    "graal": {
+      "name": "Saint-Graal",
+      "buff": null,
+      "special_effect": "Gives the player a second life."
+    }
   }
 }

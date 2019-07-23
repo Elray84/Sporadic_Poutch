@@ -61,34 +61,15 @@ public class Item {
     private Item() {
     }
 
+    // Useless ?
     public static ArrayList<String> getItemList() throws IOException, NoSuchFieldException, IllegalAccessException {
         Map<String, Item> items = parseResource();
         return new ArrayList<>(items.keySet());
     }
 
-    private static Map<String, Item> parseResource() throws IOException, NoSuchFieldException, IllegalAccessException {
-        Path path = FileSystems.getDefault().getPath("resources", "items.txt");
-        String resource = Files.readString(path);
-        resource = resource.replaceAll(" ", "").replaceAll(Pattern.quote("\n"), "").replaceAll(Pattern.quote("\r"), "");
-        Map<String, Item> result = new HashMap<>();
-        String[] items = resource.split(Pattern.quote("|"));
-        for(String item:items){
-            Item _item = new Item();
-            _item.name = item.split(":")[0];
-            String test = item.split(":")[1].split(Pattern.quote("."))[0].replaceAll("_", " ");
-            _item.description = item.split(":")[1].split(Pattern.quote("."))[0].replaceAll("_", " ");
-            for(String buff:item.split(":")[1].split(Pattern.quote("."))[1].split(",")){
-                Field field = Item.class.getDeclaredField(buff.split("=")[0]);
-                field.set(_item, Integer.parseInt(buff.split("=")[1]));
-            }
-            result.put(_item.name, _item);
-        }
-        return result;
-    }
-
     public String toString(){
         Map<String, Integer> buffs = getBuff();
-        String result = name + " :\n" + description + "\n";
+        String result = name + " :\n";
         for(String key:buffs.keySet()){
             result += key + " = " + buffs.get(key) + "\n";
         }
