@@ -20,7 +20,7 @@ public class Shop {
 
     private void roll(int player_lvl){
         HashMap<Integer, List<Connard>> _connards = (HashMap<Integer, List<Connard>>) Shop.connards;
-        List<Connard> global_shop = _connards.get(player_lvl);
+        List<Connard> global_shop = new ArrayList<Connard>(_connards.get(player_lvl));
         try {
             global_shop.addAll(myConnards);
         } catch(NullPointerException e){}

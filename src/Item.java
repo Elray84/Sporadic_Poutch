@@ -55,7 +55,7 @@ public class Item {
     }
 
     public static Item getItem(String name) throws IOException, NoSuchFieldException, IllegalAccessException {
-        return parseResource().get(name);
+        return null;
     }
 
     private Item() {
@@ -63,8 +63,7 @@ public class Item {
 
     // Useless ?
     public static ArrayList<String> getItemList() throws IOException, NoSuchFieldException, IllegalAccessException {
-        Map<String, Item> items = parseResource();
-        return new ArrayList<>(items.keySet());
+        return null;
     }
 
     public String toString(){
