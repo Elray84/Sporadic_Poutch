@@ -20,6 +20,15 @@ public class Connard {
     private Position pos;
     private ArrayList<Item> myItems;
     private int rank;
+    private boolean invisible;
+
+    public void setInvisible(boolean invisible) {
+        this.invisible = invisible;
+    }
+
+    public boolean getInvisible() {
+        return invisible;
+    }
 
     public Connard(String name){
         // Just to test

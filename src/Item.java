@@ -3,20 +3,11 @@
  * Author : Elian Raynaud
  * All Rights Reserved
  */
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.lang.reflect.Field;
-import java.nio.CharBuffer;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 
 public class Item {
@@ -54,7 +45,7 @@ public class Item {
         //TODO
     }
 
-    public static Item getItem(String name) throws IOException, NoSuchFieldException, IllegalAccessException {
+    public static Item getItem(String name) {
         return null;
     }
 
@@ -62,7 +53,7 @@ public class Item {
     }
 
     // Useless ?
-    public static ArrayList<String> getItemList() throws IOException, NoSuchFieldException, IllegalAccessException {
+    public static ArrayList<String> getItemList() {
         return null;
     }
 

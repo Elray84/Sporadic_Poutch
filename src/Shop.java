@@ -22,11 +22,16 @@ public class Shop {
         HashMap<Integer, List<Connard>> _connards = (HashMap<Integer, List<Connard>>) Shop.connards;
         List<Connard> global_shop = new ArrayList<Connard>(_connards.get(player_lvl));
         try {
+            for(Connard connard:myConnards){
+                if(connard.getInvisible()){
+                    connard.setInvisible(false);
+                }
+            }
             global_shop.addAll(myConnards);
         } catch(NullPointerException e){}
         Collections.shuffle(global_shop);
-        myConnards = global_shop.subList(0, SHOP_SIZE);
-        _connards.put(player_lvl, global_shop.subList(SHOP_SIZE, global_shop.size()));
+        myConnards = new ArrayList<Connard>(global_shop.subList(0, SHOP_SIZE));
+        _connards.put(player_lvl, new ArrayList<Connard>(global_shop.subList(SHOP_SIZE, global_shop.size())));
         connards = _connards;
     }
 
@@ -50,6 +55,20 @@ public class Shop {
         return myConnards;
     }
 
+    public Connard buy(int i){
+        Connard myConnard = myConnards.get(i);
+        if(myConnard.getInvisible()){
+            return null;
+        }
+        myConnards.remove(i);
+        //TODO: generate a new connard
+        Connard newconnard = new Connard("Test");
+        newconnard.setInvisible(true);
+        //////////////////////////////
+        myConnards.add(newconnard);
+        return myConnard;
+    }
+
     public static void initShop(){
         current_max_lvl = 1;
         generateConnards();
@@ -67,6 +86,8 @@ public class Shop {
         System.out.println(shop.getMyConnards());
         System.out.println("Shop 2 :");
         System.out.println(othershop.getMyConnards());
+        othershop.buy(3);
+        shop.buy(4);
         System.out.println("Global shop :");
         System.out.println(connards.get(1));
         othershop.roll(1);
