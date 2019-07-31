@@ -2,7 +2,7 @@
   "single_items": {
     "armor": {
       "name": "Bouclier d'Yvain",
-      "buff": "armor_buff",
+      "buff": "armor",
       "value": 20
     },
     "m_damage": {
@@ -12,8 +12,28 @@
     },
     "attack": {
       "name": "Couteau à pâté",
-      "buff": "attack_buff",
+      "buff": "attack",
       "value": 20
+    },
+    "m_res": {
+      "name": "Bouclier en bois traîté",
+      "buff": "magic_res",
+      "value": 10
+    },
+    "speed": {
+      "name": "Sort de rage",
+      "buff": "attack_speed",
+      "value": 0.5
+    },
+    "mana": {
+      "name": "Larme de pucelle",
+      "buff": "mana",
+      "value": 15
+    },
+    "health": {
+      "name": "Casse-dalle",
+      "buff": "health",
+      "value": 100
     }
   },
   "double_items": {
@@ -22,46 +42,135 @@
       "buff": "magic_damage",
       "value": 50,
       "merge_with": ["m_damage", "armor", "attack", "m_res"],
-      "merge_to": ["bague_loth"]
+      "merge_to": ["bague_loth", "saint_suaire", "excalibur", "heat_medal"]
     },
     "armor": {
       "name": "Armure de chevalier",
-      "buff": "armor_buff",
-      "value": 80
+      "buff": "armor",
+      "value": 80,
+      "merge_with": ["m_damage", "armor", "attack", "m_res"],
+      "merge_to": ["saint_suaire", "knight_helmet", "destruction_shield", "airin"]
     },
     "attack": {
       "name": "Couteau du Roi Ban",
-      "buff": "attack_buff",
-      "value": 80
+      "buff": "attack",
+      "value": 80,
+      "merge_with": ["m_damage", "armor", "attack", "m_res"],
+      "merge_to": ["excalibur", "destruction_shield", "lightsaber", "bague_controle"]
+    },
+    "m_res": {
+      "name": "Plaque de dissimulation",
+      "buff": "magic_res",
+      "value": 50,
+      "merge_with": ["m_damage", "armor", "attack", "m_res"],
+      "merge_to": ["heat_medal", "airin", "bague_controle", "diademe"]
+    },
+    "speed": {
+      "name": "Potion de vivacité",
+      "buff": "attack_speed",
+      "value": 1.5
+    },
+    "mana": {
+      "name": "Larme de démon",
+      "buff": "mana",
+      "value": 40
+    },
+    "health": {
+      "name": "3 poulets qui vont bien",
+      "buff": "health",
+      "value": 300
     }
   },
   "legendary_items": {
     "airin": {
       "name": "Bouclier d'Airain",
       "buff1": "magic_res",
-      "buff2": "armor_buff",
+      "buff2": "armor",
       "value1": 100,
       "value2": 150,
       "special_effect": "Gives the character a second life when he dies."
     },
     "excalibur": {
       "name": "Excalibur, l'épée des Rois",
-      "buff1": "attack_buff",
+      "buff1": "attack",
       "buff2": "magic_damage",
       "value1": 100,
       "value2": 100,
-      "special_effect": "Give a huge attack buff to characters with a great destiny..."
+      "special_effect": "Gives a huge attack buff to characters with a great destiny... Deals magic damage."
     },
     "bague_controle": {
       "name": "Bague de Contrôle des Lames",
-      "buff": null,
+      "buff": "magic_res",
+      "value": 100,
       "special_effect": "Gives the holder immunity to physical attacks."
     },
     "bague_loth": {
       "name": "Bague du Roi Loth",
       "buff": "magic_damage",
       "value": 250,
-      "special_effect": "The holder can launch lightnings."
+      "special_effect": "Every 3 auto-attacks, the holder launch lightnings dealing magic damage."
+    },
+    "lightsaber": {
+      "name": "Sabre laser",
+      "buff": "attack",
+      "value": 300,
+      "special_effect": "Auto_attacks can't be avoided."
+    },
+    "saint_suaire": {
+      "name": "Saint suaire",
+      "buff1": "magic_damage",
+      "buff2": "armor",
+      "value1": 100,
+      "value2": 150,
+      "special_effect": "During the first 5 seconds, the holder is immuned to auto-attacks."
+    },
+    "knight_helmet": {
+      "name": "Haume de chevalier",
+      "buff": "armor",
+      "value": 300,
+      "special_effect": "Disturbed by the holder ugliness, ennemies can't aim well : the holder avoid all critical hits."
+    },
+    "diademe": {
+      "name": "Diadème",
+      "buff": "magic_res",
+      "value": 250,
+      "special_effect": "If several charachters hold a Diadème, every holder gets all buffs."
+    },
+    "destruction_shield": {
+      "name": "Bouclier de destruction",
+      "buff1": "armor",
+      "buff2": "attack",
+      "value1": 150,
+      "value2": 150,
+      "special_effect": "The shield stacks prevented physical damages. When it reaches 1000, deals half of the damages to all adjacent ennemies."
+    },
+    "heat_medal": {
+      "name": "Médaillon de Chaleur",
+      "buff1": "magic_damage",
+      "buff2": "magic_res",
+      "value1": 150,
+      "value2": 150,
+      "special_effect": "All adjacent ennemies receive 100 magic damages per second."
+    },
+    "speed_elias": {
+      "name": "Potion de vivacité d'Elias",
+      "buff": "attack_speed",
+      "value": 3,
+      "special_effect": "Every 3 seconds, the holder has a chance to double his attack speed for 3 seconds."
+    },
+    "transport": {
+      "name": "Sièges de transport",
+      "buff1": "magic_damage",
+      "buff2": "attack_speed",
+      "value1": 150,
+      "value2": 1.5,
+      "special_effect": "Every 5 seconds, the holder is teleported next to ennemies, dealing 200 magic damage to every adjacent ennemies."
+    },
+    "parchemins": {
+      "name": "Sac de parchemins",
+      "buff": "mana",
+      "value": 100,
+      "special_effect": "The holder gains mana 2x faster, and casts random spells."
     },
     "graal": {
       "name": "Saint-Graal",

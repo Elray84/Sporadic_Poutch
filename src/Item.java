@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Item {
 
     private String name;
     private String description;
-    private int life_buff;
-    private int mana_buff;
-    private int attack_buff;
-    private int armor_buff;
-    private int magic_res_buff;
-    private int attack_speed_buff;
+    private int health;
+    private int mana;
+    private int attack;
+    private int armor;
+    private int magic_res;
+    private int attack_speed;
+    private int magic_damage;
 
     public Map<String, Integer> getBuff(){
         Map<String, Integer> buffs = new HashMap<String, Integer>();
