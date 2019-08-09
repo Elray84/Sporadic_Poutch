@@ -2,83 +2,69 @@
   "single_items": {
     "armor": {
       "name": "Bouclier d'Yvain",
-      "buff": "armor",
-      "value": 20
+      "armor": 20
     },
     "m_damage": {
       "name": "Dent de furet",
-      "buff": "magic_damage",
-      "value": 10
+      "magic_damage": 10
     },
     "attack": {
       "name": "Couteau à pâté",
-      "buff": "attack",
-      "value": 20
+      "attack": 20
     },
     "m_res": {
       "name": "Bouclier en bois traîté",
-      "buff": "magic_res",
-      "value": 10
+      "magic_res": 10
     },
     "speed": {
       "name": "Sort de rage",
-      "buff": "attack_speed",
-      "value": 0.5
+      "attack_speed": 0.5
     },
     "mana": {
       "name": "Larme de pucelle",
-      "buff": "mana",
-      "value": 15
+      "mana": 15
     },
     "health": {
       "name": "Casse-dalle",
-      "buff": "health",
-      "value": 100
+      "health": 100
     }
   },
   "double_items": {
     "m_damage": {
       "name": "Dent de requin",
-      "buff": "magic_damage",
-      "value": 50,
+      "magic_damage": 50,
       "merge_with": ["m_damage", "armor", "attack", "m_res"],
       "merge_to": ["bague_loth", "saint_suaire", "excalibur", "heat_medal"]
     },
     "armor": {
       "name": "Armure de chevalier",
-      "buff": "armor",
-      "value": 80,
+      "armor": 80,
       "merge_with": ["m_damage", "armor", "attack", "m_res"],
       "merge_to": ["saint_suaire", "knight_helmet", "destruction_shield", "airin"]
     },
     "attack": {
       "name": "Couteau du Roi Ban",
-      "buff": "attack",
-      "value": 80,
+      "attack": 80,
       "merge_with": ["m_damage", "armor", "attack", "m_res"],
       "merge_to": ["excalibur", "destruction_shield", "lightsaber", "bague_controle"]
     },
     "m_res": {
       "name": "Plaque de dissimulation",
-      "buff": "magic_res",
-      "value": 50,
+      "magic_res": 50,
       "merge_with": ["m_damage", "armor", "attack", "m_res"],
       "merge_to": ["heat_medal", "airin", "bague_controle", "diademe"]
     },
     "speed": {
       "name": "Potion de vivacité",
-      "buff": "attack_speed",
-      "value": 1.5
+      "attack_speed": 1.5
     },
     "mana": {
       "name": "Larme de démon",
-      "buff": "mana",
-      "value": 40
+      "mana": 40
     },
     "health": {
       "name": "3 poulets qui vont bien",
-      "buff": "health",
-      "value": 300
+      "health": 300
     }
   },
   "legendary_items": {
@@ -100,20 +86,17 @@
     },
     "bague_controle": {
       "name": "Bague de Contrôle des Lames",
-      "buff": "magic_res",
-      "value": 100,
+      "magic_res": 100,
       "special_effect": "Gives the holder immunity to physical attacks."
     },
     "bague_loth": {
       "name": "Bague du Roi Loth",
-      "buff": "magic_damage",
-      "value": 250,
+      "magic_damage": 250,
       "special_effect": "Every 3 auto-attacks, the holder launch lightnings dealing magic damage."
     },
     "lightsaber": {
       "name": "Sabre laser",
-      "buff": "attack",
-      "value": 300,
+      "attack": 300,
       "special_effect": "Auto_attacks can't be avoided."
     },
     "saint_suaire": {
@@ -126,14 +109,12 @@
     },
     "knight_helmet": {
       "name": "Haume de chevalier",
-      "buff": "armor",
-      "value": 300,
+      "armor": 300,
       "special_effect": "Disturbed by the holder ugliness, ennemies can't aim well : the holder avoid all critical hits."
     },
     "diademe": {
       "name": "Diadème",
-      "buff": "magic_res",
-      "value": 250,
+      "magic_res": 250,
       "special_effect": "If several charachters hold a Diadème, every holder gets all buffs."
     },
     "destruction_shield": {
@@ -154,8 +135,7 @@
     },
     "speed_elias": {
       "name": "Potion de vivacité d'Elias",
-      "buff": "attack_speed",
-      "value": 3,
+      "attack_speed": 3,
       "special_effect": "Every 3 seconds, the holder has a chance to double his attack speed for 3 seconds."
     },
     "transport": {
@@ -168,8 +148,7 @@
     },
     "parchemins": {
       "name": "Sac de parchemins",
-      "buff": "mana",
-      "value": 100,
+      "mana": 100,
       "special_effect": "The holder gains mana 2x faster, and casts random spells."
     },
     "graal": {

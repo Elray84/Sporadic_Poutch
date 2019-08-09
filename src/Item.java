@@ -3,13 +3,19 @@
  * Author : Elian Raynaud
  * All Rights Reserved
  */
-import java.io.IOException;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import java.io.*;
 import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Item {
+
+    private static final Type ITEM_LIST = new TypeToken<Map<String, Map<String, Item>>>(){}.getType();
 
     private String name;
     private String description;
@@ -53,7 +59,10 @@ public class Item {
     }
 
     // Useless ?
-    public static ArrayList<String> getItemList() {
+    public static ArrayList<String> getItemList() throws FileNotFoundException {
+        JsonReader reader = new JsonReader(new FileReader("../resources/items.json"));
+        Gson g = new Gson();
+        Map<String, Map<String, Item>> items = g.fromJson(reader, ITEM_LIST);
         return null;
     }
 
