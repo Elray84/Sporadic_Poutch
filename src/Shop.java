@@ -38,7 +38,7 @@ public class Shop {
     public static void generateConnards(){
         Map<Integer, List<Connard>> _connards;
         if (current_max_lvl == 1) {
-            _connards = new HashMap<>();
+            _connards = new HashMap<Integer, List<Connard>>();
         }
         else {
             _connards = (HashMap<Integer, List<Connard>>) connards;

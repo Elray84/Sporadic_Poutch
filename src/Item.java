@@ -18,13 +18,13 @@ public class Item {
     private static final Type ITEM_LIST = new TypeToken<Map<String, Map<String, Item>>>(){}.getType();
 
     private String name;
-    private String description;
+    private String special_effect;
     private int health;
     private int mana;
     private int attack;
     private int armor;
     private int magic_res;
-    private int attack_speed;
+    private float attack_speed;
     private int magic_damage;
 
     public Map<String, Integer> getBuff(){
@@ -51,19 +51,21 @@ public class Item {
         //TODO
     }
 
-    public static Item getItem(String name) {
-        return null;
+    public static Item getItem(String name, String type) throws FileNotFoundException {
+        JsonReader reader = new JsonReader(new FileReader("resources/items.json"));
+        Gson g = new Gson();
+        Map<String, Map<String, Item>> items = g.fromJson(reader, ITEM_LIST);
+        return items.get(type).get(name);
     }
 
     private Item() {
     }
 
-    // Useless ?
-    public static ArrayList<String> getItemList() throws FileNotFoundException {
-        JsonReader reader = new JsonReader(new FileReader("../resources/items.json"));
+    public static ArrayList<String> getSingleItemList() throws FileNotFoundException {
+        JsonReader reader = new JsonReader(new FileReader("resources/items.json"));
         Gson g = new Gson();
         Map<String, Map<String, Item>> items = g.fromJson(reader, ITEM_LIST);
-        return null;
+        return new ArrayList<String>(items.get("single_items").keySet());
     }
 
     public String toString(){
@@ -72,12 +74,12 @@ public class Item {
         for(String key:buffs.keySet()){
             result += key + " = " + buffs.get(key) + "\n";
         }
+        if(this.special_effect != null) result += "Special effect : " + this.special_effect;
         return result;
     }
 
     public static void main(String[] args) throws IOException, NoSuchFieldException, IllegalAccessException {
-        Item test = getItem("Item3");
+        Item test = getItem("excalibur", "legendary_items");
         System.out.println(test.toString());
     }
 }
-
