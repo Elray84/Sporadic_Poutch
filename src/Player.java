@@ -4,6 +4,8 @@
  * All Rights Reserved
  */
 
+import Connards.Connard;
+
 import java.util.ArrayList;
 
 public class Player {

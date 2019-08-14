@@ -4,6 +4,8 @@
  * All Rights Reserved
  */
 
+import Connards.Connard;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ public class Shop {
         }
         List<Connard> new_connards = new ArrayList<Connard>();
         for(int i=0; i<20;i++) {
-            new_connards.add(new Connard("Connard" + i));
+            new_connards.add(new Connard("Connards.Connard" + i));
         }
         _connards.put(current_max_lvl, new_connards);
         connards = _connards;

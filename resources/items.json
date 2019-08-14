@@ -18,7 +18,7 @@
     },
     "speed": {
       "name": "Sort de rage",
-      "attack_speed": 0.5
+      "speed": 0.5
     },
     "mana": {
       "name": "Larme de pucelle",
@@ -33,55 +33,58 @@
     "m_damage": {
       "name": "Dent de requin",
       "magic_damage": 50,
-      "merge_with": ["m_damage", "armor", "attack", "m_res"],
-      "merge_to": ["bague_loth", "saint_suaire", "excalibur", "heat_medal"]
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
+      "merge_to": ["bague_loth", "saint_suaire", "excalibur", "heat_medal", "transport", "meteo", "fromage"]
     },
     "armor": {
       "name": "Armure de chevalier",
       "armor": 80,
-      "merge_with": ["m_damage", "armor", "attack", "m_res"],
-      "merge_to": ["saint_suaire", "knight_helmet", "destruction_shield", "airin"]
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
+      "merge_to": ["saint_suaire", "knight_helmet", "destruction_shield", "airin", "izanagi"]
     },
     "attack": {
       "name": "Couteau du Roi Ban",
       "attack": 80,
-      "merge_with": ["m_damage", "armor", "attack", "m_res"],
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
       "merge_to": ["excalibur", "destruction_shield", "lightsaber", "bague_controle"]
     },
     "m_res": {
       "name": "Plaque de dissimulation",
       "magic_res": 50,
-      "merge_with": ["m_damage", "armor", "attack", "m_res"],
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
       "merge_to": ["heat_medal", "airin", "bague_controle", "diademe"]
     },
     "speed": {
       "name": "Potion de vivacité",
-      "attack_speed": 1.5
+      "speed": 1.5,
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
+      "merge_to": ["transport", "", "", "", "speed_elias"]
     },
     "mana": {
       "name": "Larme de démon",
-      "mana": 40
+      "mana": 40,
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
+      "merge_to" : ["", "", "", "", "", "parchemins"]
     },
     "health": {
       "name": "3 poulets qui vont bien",
-      "health": 300
+      "health": 300,
+      "merge_with": ["m_damage", "armor", "attack", "m_res", "speed", "mana", "health"],
+      "merge_to": []
     }
   },
   "legendary_items": {
     "airin": {
       "name": "Bouclier d'Airain",
-      "buff1": "magic_res",
-      "buff2": "armor",
-      "value1": 100,
-      "value2": 150,
+      "magic_res":  100,
+      "armor":  150,
       "special_effect": "Gives the character a second life when he dies."
     },
     "excalibur": {
       "name": "Excalibur, l'épée des Rois",
-      "buff1": "attack",
-      "buff2": "magic_damage",
-      "value1": 100,
-      "value2": 100,
+      "exc": true,
+      "attack": 100,
+      "magic_damage":  50,
       "special_effect": "Gives a huge attack buff to characters with a great destiny... Deals magic damage."
     },
     "bague_controle": {
@@ -91,7 +94,7 @@
     },
     "bague_loth": {
       "name": "Bague du Roi Loth",
-      "magic_damage": 250,
+      "magic_damage": 150,
       "special_effect": "Every 3 auto-attacks, the holder launch lightnings dealing magic damage."
     },
     "lightsaber": {
@@ -101,59 +104,68 @@
     },
     "saint_suaire": {
       "name": "Saint suaire",
-      "buff1": "magic_damage",
-      "buff2": "armor",
-      "value1": 100,
-      "value2": 150,
-      "special_effect": "During the first 5 seconds, the holder is immuned to auto-attacks."
+      "magic_damage": 50,
+      "armor": 150,
+      "special_effect": "During the first 5 seconds, the holder is immune to auto-attacks."
     },
     "knight_helmet": {
       "name": "Haume de chevalier",
       "armor": 300,
-      "special_effect": "Disturbed by the holder ugliness, ennemies can't aim well : the holder avoid all critical hits."
+      "special_effect": "Disturbed by the holder ugliness, enemies can't aim well : the holder avoid all critical hits."
     },
     "diademe": {
       "name": "Diadème",
       "magic_res": 250,
-      "special_effect": "If several charachters hold a Diadème, every holder gets all buffs."
+      "special_effect": "If several characters hold a Diadème, every holder gets all buffs."
     },
     "destruction_shield": {
       "name": "Bouclier de destruction",
-      "buff1": "armor",
-      "buff2": "attack",
-      "value1": 150,
-      "value2": 150,
-      "special_effect": "The shield stacks prevented physical damages. When it reaches 1000, deals half of the damages to all adjacent ennemies."
+      "armor":  150,
+      "attack":  150,
+      "special_effect": "The shield stacks prevented physical damages. When it reaches 1000, deals half of the damages to all adjacent enemies."
     },
     "heat_medal": {
       "name": "Médaillon de Chaleur",
-      "buff1": "magic_damage",
-      "buff2": "magic_res",
-      "value1": 150,
-      "value2": 150,
-      "special_effect": "All adjacent ennemies receive 100 magic damages per second."
+      "magic_damage": 50,
+      "magic_res": 150,
+      "special_effect": "All adjacent enemies receive 100 magic damages per second."
     },
     "speed_elias": {
       "name": "Potion de vivacité d'Elias",
-      "attack_speed": 3,
+      "speed": 3,
       "special_effect": "Every 3 seconds, the holder has a chance to double his attack speed for 3 seconds."
     },
     "transport": {
       "name": "Sièges de transport",
-      "buff1": "magic_damage",
-      "buff2": "attack_speed",
-      "value1": 150,
-      "value2": 1.5,
-      "special_effect": "Every 5 seconds, the holder is teleported next to ennemies, dealing 200 magic damage to every adjacent ennemies."
+      "magic_damage": 50,
+      "speed":  1.5,
+      "special_effect": "Every 5 seconds, the holder is teleported next to enemies, dealing 200 magic damage to every adjacent enemies."
     },
     "parchemins": {
       "name": "Sac de parchemins",
-      "mana": 100,
+      "mana": 80,
       "special_effect": "The holder gains mana 2x faster, and casts random spells."
+    },
+    "meteo": {
+      "name": "Météo favorable",
+      "mana": 40,
+      "magic_damage": 50,
+      "special_effect": "The meteorological conditions are great... When you deal damages with your spells, it restores mana."
+    },
+    "fromage": {
+      "name": "Jet de fromage",
+      "magic_damage": 50,
+      "health": 300,
+      "special_effect": "Every 5 attacks, the holder cast a powerful spell throwing cheese on his enemies"
+    },
+    "izanagi": {
+      "name": "Izanagi",
+      "armor": "100",
+      "speed": 1.5,
+      "special_effect": "The holder has 30% chances to dodge auto-attacks"
     },
     "graal": {
       "name": "Saint-Graal",
-      "buff": null,
       "special_effect": "Gives the player a second life."
     }
   }

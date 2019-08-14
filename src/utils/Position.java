@@ -4,7 +4,7 @@
  * All Rights Reserved
  */
 
-public class Position {
+package utils;public class Position {
 
     private int x;
     private int y;

@@ -4,6 +4,10 @@
  * All Rights Reserved
  */
 
+package Connards;
+import Items.Item;
+import utils.Position;
+
 import java.util.ArrayList;
 
 public class Connard {
