@@ -4,8 +4,11 @@
  * All Rights Reserved
  */
 
+import Connards.Arthur;
 import Connards.Connard;
+import Connards.Perceval;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -37,7 +40,7 @@ public class Shop {
         connards = _connards;
     }
 
-    public static void generateConnards(){
+    public static void generateConnards() throws FileNotFoundException {
         Map<Integer, List<Connard>> _connards;
         if (current_max_lvl == 1) {
             _connards = new HashMap<Integer, List<Connard>>();
@@ -46,8 +49,11 @@ public class Shop {
             _connards = (HashMap<Integer, List<Connard>>) connards;
         }
         List<Connard> new_connards = new ArrayList<Connard>();
-        for(int i=0; i<20;i++) {
-            new_connards.add(new Connard("Connards.Connard" + i));
+        for(int i=0; i<10;i++) {
+            new_connards.add(Arthur.getInstance(1));
+        }
+        for(int i=10; i<20;i++){
+            new_connards.add(Perceval.getInstance(1));
         }
         _connards.put(current_max_lvl, new_connards);
         connards = _connards;
@@ -57,26 +63,26 @@ public class Shop {
         return myConnards;
     }
 
-    public Connard buy(int i){
+    public Connard buy(int i) throws FileNotFoundException {
         Connard myConnard = myConnards.get(i);
         if(myConnard.getInvisible()){
             return null;
         }
         myConnards.remove(i);
         //TODO: generate a new connard
-        Connard newconnard = new Connard("Test");
+        Connard newconnard = Perceval.getInstance(1);
         newconnard.setInvisible(true);
         //////////////////////////////
         myConnards.add(newconnard);
         return myConnard;
     }
 
-    public static void initShop(){
+    public static void initShop() throws FileNotFoundException {
         current_max_lvl = 1;
         generateConnards();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         initShop();
         System.out.println("Global shop :");
         System.out.println(connards.get(1));
