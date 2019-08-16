@@ -28,7 +28,7 @@ public class Shop {
         List<Connard> global_shop = new ArrayList<Connard>(_connards.get(player_lvl));
         try {
             for(Connard connard:myConnards){
-                if(connard.getInvisible()){
+                if(connard.isInvisible()){
                     connard.setInvisible(false);
                 }
             }
@@ -65,7 +65,7 @@ public class Shop {
 
     public Connard buy(int i) throws FileNotFoundException {
         Connard myConnard = myConnards.get(i);
-        if(myConnard.getInvisible()){
+        if(myConnard.isInvisible()){
             return null;
         }
         myConnards.remove(i);

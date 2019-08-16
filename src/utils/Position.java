@@ -4,7 +4,17 @@
  * All Rights Reserved
  */
 
-package utils;public class Position {
+package utils;
+
+public class Position {
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 
     private int x;
     private int y;
@@ -12,6 +22,11 @@ package utils;public class Position {
     private static int xRightBound = 15; // TODO
     private static int yUpperBound = 0;
     private static int yLowerBound = 15; // TODO
+
+    public Position(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
 
     public void move_left(){
         if(x - 1 >= xLeftBound){
@@ -37,4 +52,12 @@ package utils;public class Position {
         }
     }
 
+    public double getDistance(Position p){
+        return Math.abs(p.x - this.x) + Math.abs(p.y - this.y);
+    }
+
+    @Override
+    public String toString() {
+        return "X : " + x + " | Y : " + y;
+    }
 }
