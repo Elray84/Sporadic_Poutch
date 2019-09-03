@@ -4,7 +4,8 @@
  * All Rights Reserved
  */
 
-package Items;import com.google.gson.Gson;
+package Items;
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import java.io.*;
@@ -56,7 +57,7 @@ public class Item {
         Map<String, Map<String, Item>> items = g.fromJson(reader, ITEM_LIST);
         Item item = items.get(type).get(name);
         if(type.equals("legendary_items")){
-            Class myClass = Class.forName(name);
+            Class myClass = Class.forName("Items." + name);
             Class[] types = {Item.class};
             Constructor constructor = myClass.getConstructor(types);
             return (Item) constructor.newInstance(item);
@@ -104,7 +105,7 @@ public class Item {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        Item test = getItem("transport", "legendary_items");
+        Item test = getItem("excalibur", "legendary_items");
         System.out.println(test.toString());
     }
 }

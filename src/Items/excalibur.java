@@ -4,11 +4,7 @@
  * All Rights Reserved
  */
 
-package Items;/*
- * Copyright (c) 2019.
- * Author : Elian Raynaud
- * All Rights Reserved
- */
+package Items;
 
 public class excalibur extends Item {
 
